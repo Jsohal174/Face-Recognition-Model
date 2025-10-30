@@ -1,0 +1,80 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb
+
+# Model Files (large files - download separately)
+model_data/*.h5
+model_data/*.pb
+model_data/*.pbtxt
+model_data/*.weights
+
+# Database (may contain sensitive data)
+database/*.json
+database/*.db
+
+# Output Images
+output/*.jpg
+output/*.png
+output/*.jpeg
+
+# Logs
+logs/
+*.log
+
+# Images (may contain personal data)
+images/*.jpg
+images/*.png
+images/*.jpeg
+
+# Keep directory structure
+!images/.gitkeep
+!output/.gitkeep
+!database/.gitkeep
+!model_data/.gitkeep
+!logs/.gitkeep
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Temporary files
+*.tmp
+*.bak
+*.swp

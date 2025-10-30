@@ -1,0 +1,164 @@
+# Face Recognition System Configuration
+# ======================================
+
+# Model Settings
+model:
+  # Directory containing model files
+  model_dir: "model_data"
+
+  # Model file names
+  architecture_file: "model.json"
+  weights_file: "model.h5"
+
+  # Input image specifications
+  input_size: [160, 160]  # Width x Height
+  input_channels: 3       # RGB
+
+  # Output specifications
+  encoding_dimension: 128
+
+  # Preprocessing
+  normalization: true
+  normalize_range: [0, 1]  # Divide by 255
+  decimals: 12             # Rounding precision
+
+
+# Database Settings
+database:
+  # Database file path
+  database_path: "database/face_database.json"
+
+  # Storage format
+  format: "json"
+
+  # Metadata to store
+  store_metadata:
+    - "date_added"
+    - "image_path"
+    - "encoding_shape"
+
+
+# Recognition Settings
+recognition:
+  # Distance threshold for recognition (1:K matching)
+  # Lower = more strict, Higher = more lenient
+  threshold: 0.7
+
+  # Distance metric
+  metric: "l2"  # L2 norm (Euclidean distance)
+
+  # Top K matches to consider
+  top_k: 5
+
+  # Minimum confidence score (0-1)
+  min_confidence: 0.3
+
+
+# Verification Settings
+verification:
+  # Distance threshold for verification (1:1 matching)
+  threshold: 0.7
+
+  # Distance metric
+  metric: "l2"
+
+
+# Visualization Settings
+visualization:
+  # Output directory for results
+  output_dir: "output"
+
+  # Draw settings
+  font_scale: 1.2
+  font_thickness: 2
+  box_thickness: 2
+
+  # Colors (BGR format)
+  colors:
+    recognized: [0, 255, 0]    # Green
+    not_recognized: [0, 0, 255]  # Red
+    verified: [0, 255, 0]      # Green
+    not_verified: [0, 0, 255]  # Red
+    text: [255, 255, 255]      # White
+    background: [0, 0, 0]      # Black
+
+
+# Logging Settings
+logging:
+  # Enable logging
+  enabled: true
+
+  # Log level: DEBUG, INFO, WARNING, ERROR
+  level: "INFO"
+
+  # Log file
+  log_file: "logs/face_recognition.log"
+
+  # Console output
+  console_output: true
+
+
+# Performance Settings
+performance:
+  # Batch size for encoding multiple images
+  batch_size: 32
+
+  # Use GPU if available
+  use_gpu: true
+
+  # TensorFlow settings
+  tensorflow:
+    allow_growth: true
+    log_device_placement: false
+
+
+# Image Settings
+image:
+  # Supported image formats
+  formats:
+    - "jpg"
+    - "jpeg"
+    - "png"
+    - "bmp"
+
+  # Image quality for saved outputs
+  jpeg_quality: 95
+
+  # Image preprocessing
+  preprocessing:
+    resize_method: "bilinear"
+    color_mode: "rgb"
+
+
+# Security Settings
+security:
+  # Enable liveness detection (future feature)
+  liveness_detection: false
+
+  # Maximum attempts for verification
+  max_verification_attempts: 3
+
+  # Lockout time after max attempts (seconds)
+  lockout_time: 300  # 5 minutes
+
+
+# Paths
+paths:
+  images: "images"
+  output: "output"
+  database: "database"
+  model_data: "model_data"
+  logs: "logs"
+
+
+# Application Settings
+application:
+  name: "Face Recognition System"
+  version: "1.0.0"
+  author: "Your Name"
+
+  # Demo mode
+  demo_mode: false
+
+  # Debug mode
+  debug: false
